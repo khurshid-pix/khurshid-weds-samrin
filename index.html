@@ -9,15 +9,15 @@
 <!-- Open Graph (WhatsApp preview) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Khurshid & Samrin · Nikah Invitation">
-<meta property="og:description" content="13 · 15 · 16 January 2027 · Kolkata. You are cordially invited.">
+<meta property="og:description" content="With the blessings of Allah ﷻ · 13, 15 &amp; 16 January 2027 · Kolkata. You are cordially invited.">
 <meta property="og:url" content="https://khurshid-pix.github.io/khurshid-weds-samrin/">
-<meta property="og:image" content="https://khurshid-pix.github.io/khurshid-weds-samrin/assets/v3/og-image.jpg">
-<meta property="og:image:secure_url" content="https://khurshid-pix.github.io/khurshid-weds-samrin/assets/v3/og-image.jpg">
+<meta property="og:image" content="https://khurshid-pix.github.io/khurshid-weds-samrin/assets/v3/og-cover-v2.jpg">
+<meta property="og:image:secure_url" content="https://khurshid-pix.github.io/khurshid-weds-samrin/assets/v3/og-cover-v2.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://khurshid-pix.github.io/khurshid-weds-samrin/assets/v3/og-image.jpg">
+<meta name="twitter:image" content="https://khurshid-pix.github.io/khurshid-weds-samrin/assets/v3/og-cover-v2.jpg">
 <link rel="icon" href="assets/v3/seal.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,12 @@
 <link rel="preload" as="image" href="assets/v3/curtains.webp">
 <link rel="preload" as="image" href="assets/v3/door-left.webp">
 <link rel="preload" as="image" href="assets/v3/door-right.webp">
+<link rel="preload" as="image" href="assets/v3/bow.webp">
+<link rel="preload" as="image" href="assets/v3/seal.webp">
+<link rel="preload" as="image" href="assets/v3/ribbon-band.webp">
+<link rel="preload" as="image" href="assets/v3/bg-sheesh-mahal.webp">
+<link rel="preload" as="image" href="assets/v3/jharokha-filled.webp">
+<link rel="preload" as="image" href="assets/v3/bismillah-light.svg">
 <style>
 :root{
   --u:min(1vw,4.3px);
@@ -88,12 +94,13 @@ a{color:inherit}
 #gate.untie .band.l{transform:translate(-110%,-50%);opacity:0}
 #gate.untie .band.r{transform:translate(110%,-50%);opacity:0}
 .bow{position:absolute;left:50%;top:50%;width:64%;transform:translate(-50%,-33%);z-index:4;filter:drop-shadow(0 8px 10px rgba(0,0,0,.45));transition:transform .9s cubic-bezier(.5,0,.6,1) .2s, opacity .7s ease .3s}
-#gate.untie .bow{transform:translate(-50%,40%) scale(.75) rotate(-6deg);opacity:0}
 .seal{position:absolute;left:50%;top:50%;width:25%;transform:translate(-50%,-50%);z-index:5;filter:drop-shadow(0 6px 8px rgba(0,0,0,.5));transition:transform .55s ease, opacity .45s ease}
 #gate.untie .seal{transform:translate(-50%,-62%) scale(1.18);opacity:0}
 .gate-top{position:absolute;top:max(18px,env(safe-area-inset-top));left:0;right:0;z-index:9;text-align:center;color:var(--gold-light);transition:opacity .5s}
 .gate-top img{width:min(calc(66 * var(--u)),290px);margin:0 auto 8px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.8))}
 .gate-top p{font-family:var(--caps);font-weight:600;font-size:13px;letter-spacing:.28em;color:var(--gold-light);text-shadow:0 1px 3px rgba(0,0,0,.9)}
+.gate-hint span::after{content:"";}
+#gate:not(.ready) .gate-hint span{opacity:.45;animation:none}
 .gate-hint{position:absolute;bottom:max(26px,env(safe-area-inset-bottom));left:0;right:0;z-index:10;text-align:center;transition:opacity .4s}
 .gate-hint span{display:inline-block;font-family:var(--caps);font-weight:600;font-size:15px;letter-spacing:.32em;color:var(--gold-light);padding:10px 24px;border:1px solid rgba(226,198,140,.55);border-radius:40px;background:rgba(62,11,22,.55);backdrop-filter:blur(2px);animation:pulse 2.4s ease-in-out infinite}
 #gate.untie .gate-top,#gate.untie .gate-hint{opacity:0}
@@ -268,7 +275,18 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
    1.10s doors unlatch and swing · 1.30s hall light grows · 2.50s camera walks in
    3.10s hall fills the doorway · 3.90s full-screen hall takes over · 4.60s opener dissolves */
 #gate.untie .seal{transform:translate(-50%,-78%) scale(1.12) rotate(-9deg);opacity:0;transition:transform .75s cubic-bezier(.3,.6,.3,1),opacity .5s ease .2s}
-#gate.untie .bow{transform:translate(-50%,62%) scale(.86) rotate(-11deg);opacity:0;transition:transform 1.05s cubic-bezier(.55,0,.85,.4) .15s,opacity .55s ease .6s}
+.bow.bl{clip-path:inset(0 50% 0 0)}
+.bow.br{clip-path:inset(0 0 0 50%)}
+/* knot untying: a small tug, the loops pull apart and slacken, then the loose ribbon slips down */
+#gate.untie .bow{transition:none}
+#gate.untie .bow.bl{animation:untieL 1.35s cubic-bezier(.45,0,.3,1) .12s both}
+#gate.untie .bow.br{animation:untieR 1.35s cubic-bezier(.45,0,.3,1) .12s both}
+@keyframes untieL{0%{transform:translate(-50%,-33%);opacity:1}14%{transform:translate(-49%,-34%) scale(.97);opacity:1}
+  55%{transform:translate(-64%,-26%) rotate(-24deg) scale(.94);opacity:1}
+  100%{transform:translate(-80%,30%) rotate(-48deg) scale(.82);opacity:0}}
+@keyframes untieR{0%{transform:translate(-50%,-33%);opacity:1}14%{transform:translate(-51%,-34%) scale(.97);opacity:1}
+  55%{transform:translate(-36%,-26%) rotate(24deg) scale(.94);opacity:1}
+  100%{transform:translate(-20%,30%) rotate(48deg) scale(.82);opacity:0}}
 #gate.untie .band.l{transform:translate(-108%,-20%) rotate(-5deg);opacity:0;transition:transform 1.1s cubic-bezier(.5,0,.25,1) .45s,opacity .6s ease .9s}
 #gate.untie .band.r{transform:translate(108%,-20%) rotate(5deg);opacity:0;transition:transform 1.1s cubic-bezier(.5,0,.25,1) .45s,opacity .6s ease .9s}
 #gate.untie .gate-top,#gate.untie .gate-hint{opacity:0;transition:opacity .5s ease}
@@ -283,8 +301,7 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
 #gate.enter .curtains{filter:blur(3px) brightness(.8);transition:filter 1.4s ease 3s}
 #gate.enter .drape{filter:drop-shadow(0 0 10px rgba(0,0,0,.55)) blur(3px) brightness(.8);transition:filter 1.4s ease 3s}
 #gate.enter .scrim{opacity:0;transition:opacity .8s ease 2.5s}
-#gate.enter .glow-full{opacity:1;transition:opacity 1s ease 3.1s}
-#gate.enter .hall{opacity:1;transition:opacity .7s ease 3.9s}
+#gate.enter .hall{opacity:1;transition:opacity 1.5s cubic-bezier(.4,0,.2,1) 3.05s}
 #gate.gone{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .6s ease,visibility 0s linear .6s}
 
 @media (prefers-reduced-motion:reduce){
@@ -310,12 +327,12 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
     <div class="spill"></div>
     <div class="opening">
       <div class="glow"></div>
-      <div class="glow-full"></div>
       <div class="door l"></div>
       <div class="door r"></div>
       <div class="band l"></div>
       <div class="band r"></div>
-      <img class="bow" src="assets/v3/bow.webp" alt="">
+      <img class="bow bl" src="assets/v3/bow.webp" alt="">
+      <img class="bow br" src="assets/v3/bow.webp" alt="">
       <img class="seal" src="assets/v3/seal.webp" alt="">
     </div>
   </div>
@@ -570,8 +587,15 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
 
   // ----- Gate: seal lifts, bow unties, ribbon slides off, doors open -----
   const gate = $('gate'), bgm = $('bgm'), musicBtn = $('music');
-  let opened = false;
+  let opened = false, ready = false, queued = false;
+  const critical = ['curtains','door-left','door-right','bow','seal','ribbon-band','bg-sheesh-mahal','jharokha-filled']
+    .map(n => 'assets/v3/' + n + '.webp').concat(['assets/v3/bismillah-light.svg']);
+  Promise.race([
+    Promise.all(critical.map(src => { const im = new Image(); im.src = src; return im.decode().catch(() => {}); })),
+    new Promise(r => setTimeout(r, 8000))
+  ]).then(() => { ready = true; gate.classList.add('ready'); if (queued) openGate(); });
   function openGate(){
+    if (!ready) { queued = true; gate.classList.add('waiting'); return; }
     if (opened) return; opened = true;
     // one tap starts the whole choreographed sequence (timings live in the CSS timeline)
     gate.classList.add('untie', 'open', 'enter');
