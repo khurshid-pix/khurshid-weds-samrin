@@ -228,14 +228,6 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,9.5vw,46px);l
 .timeline b{display:block;font-family:var(--display);font-weight:400;font-size:20px;color:var(--gold-light)}
 .timeline span{font-size:16.5px;color:#ead9c6;line-height:1.45}
 
-/* ================= DRESS CODE ================= */
-.dress{list-style:none;max-width:440px;margin:24px auto 0;text-align:left}
-.dress li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(180,139,79,.3)}
-.dress .sw{display:flex}
-.dress .sw i{width:18px;height:18px;border-radius:50%;margin-right:-5px;border:1.5px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,.2)}
-.dress b{display:block;font-family:var(--display);font-weight:400;font-size:19px;color:var(--maroon)}
-.dress span{font-size:16.5px;color:var(--ink-soft)}
-
 /* ================= RSVP ================= */
 .rsvp form{text-align:left;max-width:440px;margin:22px auto 0}
 .rsvp label{display:block;font-family:var(--caps);font-weight:600;font-size:12.5px;letter-spacing:.2em;color:var(--gold-light);margin:16px 0 6px}
@@ -410,7 +402,6 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
         <div class="venue"><img src="assets/v3/icons/hall.svg" alt="" loading="lazy"><div><b>Flora Fountain Community Hall 1 &amp; 2</b><span>New Town, Kolkata</span></div></div>
         <div class="actions">
           <a class="btn" href="https://share.google/PlcZdkPEWS6JYMSu6" target="_blank" rel="noopener">directions</a>
-          <button class="btn" data-ics="haldi">add to calendar</button>
         </div>
       </div>
     </article>
@@ -424,7 +415,6 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
         <div class="venue"><img src="assets/v3/icons/hall.svg" alt="" loading="lazy"><div><b>Flora Fountain Community Hall 1 &amp; 2</b><span>New Town, Kolkata</span></div></div>
         <div class="actions">
           <a class="btn" href="https://share.google/PlcZdkPEWS6JYMSu6" target="_blank" rel="noopener">directions</a>
-          <button class="btn" data-ics="sangeet">add to calendar</button>
         </div>
       </div>
     </article>
@@ -454,7 +444,6 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
         <div class="venue"><img src="assets/v3/icons/arch-crescent.svg" alt="" loading="lazy"><div><b>NKDA Community Centre 2</b><span>Action Area II, New Town, Rajarhat</span></div></div>
         <div class="actions">
           <a class="btn solid" href="https://share.google/fywFnlvAMRsK4lkMC" target="_blank" rel="noopener">directions</a>
-          <button class="btn" data-ics="nikah">add to calendar</button>
         </div>
       </div>
     </article>
@@ -486,25 +475,9 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
         <div class="venue"><img src="assets/v3/icons/pavilion.svg" alt="" loading="lazy"><div><b>The Meadows</b><span>P.C. Chandra Garden, Kolkata</span></div></div>
         <div class="actions">
           <a class="btn" href="https://share.google/U9yAvLB5n7GPAkXeE" target="_blank" rel="noopener">directions</a>
-          <button class="btn" data-ics="walima">add to calendar</button>
         </div>
       </div>
     </article>
-  </div>
-</section>
-
-<!-- ================= 9 · DRESS CODE ================= -->
-<section class="blush">
-  <div class="wrap">
-    <img class="icon reveal" src="assets/v3/icons/bow.svg" alt="" style="width:70px" loading="lazy">
-    <h2 class="reveal">Dress Code</h2>
-    <p class="lede reveal">Gentle suggestions for each celebration</p>
-    <ul class="dress reveal">
-      <li><span class="sw"><i style="background:#E0A526"></i><i style="background:#F2C94C"></i><i style="background:#F8F2E9"></i></span><div><b>Haldi</b><span>Shades of yellow &amp; marigold; light cottons</span></div></li>
-      <li><span class="sw"><i style="background:#5E1222"></i><i style="background:#5B2C6F"></i><i style="background:#B48B4F"></i></span><div><b>Sangeet &amp; Dinner</b><span>Festive jewel tones: maroon, plum, gold</span></div></li>
-      <li><span class="sw"><i style="background:#F8F2E9"></i><i style="background:#E9CBB8"></i><i style="background:#B48B4F"></i></span><div><b>Nikah</b><span>Traditional &amp; modest: ivory, pastels, gold; ladies may carry a dupatta</span></div></li>
-      <li><span class="sw"><i style="background:#3E0B16"></i><i style="background:#9E1B32"></i><i style="background:#E9DCC3"></i></span><div><b>Walima</b><span>Royal formal: maroon, red, champagne</span></div></li>
-    </ul>
   </div>
 </section>
 
@@ -564,12 +537,6 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
     whatsapp: '919007295096',
     formUrl: '',  // paste the Google Form link here to show the second RSVP button
     nikah: '2027-01-15T19:00:00+05:30'
-  };
-  const EVENTS = {
-    haldi:   {title:'Haldi · Khurshid & Samrin', start:'20270113T170000', end:'20270113T193000', loc:'Flora Fountain Community Hall 1 & 2, New Town, Kolkata', url:'https://share.google/PlcZdkPEWS6JYMSu6'},
-    sangeet: {title:'Sangeet & Dinner · Khurshid & Samrin', start:'20270113T200000', end:'20270113T233000', loc:'Flora Fountain Community Hall 1 & 2, New Town, Kolkata', url:'https://share.google/PlcZdkPEWS6JYMSu6'},
-    nikah:   {title:'Nikah · Khurshid & Samrin', start:'20270115T190000', end:'20270115T220000', loc:'NKDA Community Centre 2, Action Area II, New Town, Rajarhat', url:'https://share.google/fywFnlvAMRsK4lkMC'},
-    walima:  {title:'Dawat-e-Walima · Khurshid & Samrin', start:'20270116T200000', end:'20270116T233000', loc:'The Meadows, P.C. Chandra Garden, Kolkata', url:'https://share.google/U9yAvLB5n7GPAkXeE'}
   };
   const $ = id => document.getElementById(id);
 
@@ -641,26 +608,6 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
     $('cd-s').textContent = pad(s % 60);
   }
   tick(); setInterval(tick, 1000);
-
-  // ----- Add to calendar (.ics) -----
-  document.querySelectorAll('[data-ics]').forEach(btn => btn.addEventListener('click', () => {
-    const e = EVENTS[btn.dataset.ics];
-    const ics = [
-      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//KS Nikah//EN','BEGIN:VEVENT',
-      'UID:' + btn.dataset.ics + '-ks2027@invite',
-      'DTSTAMP:20261026T000000Z',
-      'DTSTART;TZID=Asia/Kolkata:' + e.start,
-      'DTEND;TZID=Asia/Kolkata:' + e.end,
-      'SUMMARY:' + e.title,
-      'LOCATION:' + e.loc.replace(/,/g, '\\,'),
-      'DESCRIPTION:Directions: ' + e.url,
-      'END:VEVENT','END:VCALENDAR'
-    ].join('\r\n');
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([ics], {type: 'text/calendar'}));
-    a.download = btn.dataset.ics + '.ics';
-    document.body.appendChild(a); a.click(); a.remove();
-  }));
 
   // ----- RSVP -----
   if (CONFIG.formUrl) { const f = $('rsvp-form-link'); f.href = CONFIG.formUrl; f.hidden = false; }
