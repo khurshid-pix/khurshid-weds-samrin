@@ -146,10 +146,15 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,calc(9.5 * va
 .namecard>img.frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .namecard .inner{position:absolute;left:12%;right:12%;top:24.5%;bottom:7.5%;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
 .namecard .mid,.namecard .foot{display:flex;flex-direction:column;align-items:center;width:100%}
-.orn{display:flex;align-items:center;justify-content:center;gap:2.4cqw;width:72%;margin:2.4cqw auto 0}
+.orn{display:flex;align-items:center;justify-content:center;gap:9px;width:72%;margin:8px auto 0}
+.namecard .orn{gap:2.6cqw;margin-top:2.4cqw}
 .orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(180,139,79,0),var(--gold))}
 .orn::after{background:linear-gradient(90deg,var(--gold),rgba(180,139,79,0))}
-.orn i{width:2.1cqw;height:2.1cqw;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 0 3px rgba(180,139,79,.18)}
+/* fine outlined diamond with a tiny gold centre */
+.orn i{position:relative;flex:none;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
+.orn i::after{content:"";position:absolute;inset:1.5px;background:var(--gold)}
+.namecard .orn i{width:1.7cqw;height:1.7cqw}
+.namecard .orn i::after{inset:.45cqw}
 .namecard .blessing{font-family:var(--caps);font-weight:600;font-size:3.35cqw;letter-spacing:.16em;white-space:nowrap;color:var(--gold-deep)}
 .names{margin-top:2.6cqw}
 .names .n{display:block;font-family:var(--script);font-size:13.6cqw;line-height:1;color:var(--maroon);text-shadow:0 1px 0 rgba(255,255,255,.7)}
@@ -521,7 +526,7 @@ footer{text-align:center;padding:26px 20px max(30px,env(safe-area-inset-bottom))
     <p class="label reveal" style="margin-top:40px">for any assistance</p>
     <div class="contacts reveal">
       <a href="tel:+918583904539"><b>Amina Khan</b><span>Bhabhi · +91 85839 04539</span></a>
-      <a href="tel:+919903818464"><b>Jamshed Alam</b><span>Elder Brother · +91 99038 18464</span></a>
+      <a href="tel:+919903818464"><b>Jamshed Alam</b><span>Brother · +91 99038 18464</span></a>
     </div>
     <p class="sign reveal">Khurshid &amp; Samrin</p>
     <img class="mono reveal" src="assets/v3/seal.webp" alt="K · S monogram seal" loading="lazy">
